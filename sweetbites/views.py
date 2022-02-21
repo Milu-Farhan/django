@@ -116,8 +116,5 @@ def manage_users(request):
 
 @login_required(login_url='login')
 def products(request):
-    if request.user.is_superuser:
-        items = Product.objects.all()
-        return render(request, 'products.html',{'items':items})
-    else:
-        return redirect('home')
+    items = Product.objects.all()
+    return render(request, 'products.html',{'items':items})
