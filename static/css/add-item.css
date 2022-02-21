@@ -1,0 +1,72 @@
+.add-item {
+  font-weight: 600;
+}
+.title {
+  font-size: 1.3rem;
+}
+
+.content {
+  margin: 20px;
+}
+.details {
+  margin-top: 15px;
+  width: 100%;
+  height: 570px;
+  display: grid;
+  grid-template-rows: 1fr 10%;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.fields {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.fields form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.fields form input {
+  margin-left: 20px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 15px;
+  height: 30px;
+}
+
+.fields .description {
+  height: 90px;
+  width: 400px;
+}
+
+.img-upload input {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.buttons {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.buttons input {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+}

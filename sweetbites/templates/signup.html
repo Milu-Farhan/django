@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="">
+        <img class="logo" src="/static/images/logo.png" alt="Logo" />
+      </a>
+      <h4>Sweet Bites</h4>
+    </div>
+    <div class="main">
+      <div class="content">
+        <div class="title">Create New Account</div>
+        <div class="text">
+          <form method="POST" action="{% url 'signup_auth' %}">
+            {% csrf_token %}
+            <label for="">username</label>
+            <input type="text" name="username" class="input" />
+            <label for="Password">Password</label>
+            <input type="password" name="password1" class="input" />
+            <label for="">Confirm Password</label>
+            <input type="password" name="password2" class="input" />
+            <input class="button" type="submit" />
+          </form>
+        </div>
+        <div class="third">
+          <p>Already have an account?</p>
+          <a href="{% url 'login'%}">Log in</a>
+        </div>
+      </div>
+      <div class="image signup-img"></div>
+    </div>
+    <div class="footer">
+      <p>© Sweet bites.All right reserved</p>
+    </div>
+
+    <script src="{% static '/js/common.js' %}"></script>
+    <script src="{% static '/js/signup.js' %}"></script>
+  </body>
+</html>

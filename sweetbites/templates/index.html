@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href=""></a>
+      <img class="logo" src="/static/images/logo.png" alt="Logo" />
+      <h3>Sweet Bites</h3>
+      <nav>
+        <ul>
+          <li>My Account</li>
+          <li>My Cart</li>
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Log out</a></li>
+          {%else %}
+          <li><a href="{% url 'login' %}">Log in</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    <div class="content">
+      <div class="banner">
+        {% if request.user.is_authenticated %}
+        <h1>
+          <span>Welcome {{request.user.username}}</span>
+          <br />
+          homemade Cakes
+          <br />
+          Delivered to Your Doorsteps
+        </h1>
+        <a href="{% url 'products'%}">Order Now</a>
+        {% endif %}
+      </div>
+      <div class="love">
+        <h1>
+          Made with Love
+          <br />
+          <span>❤</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© Sweet bites.All right reserved</p>
+    </div>
+  </body>
+</html>

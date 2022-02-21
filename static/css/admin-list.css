@@ -1,0 +1,77 @@
+.view-item{
+    font-weight: bold;
+}
+.content .header{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header p{
+    font-size: 1.2rem;
+}
+
+.header input{
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    height: 30px;
+}
+
+.header span{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.item-list{
+    display: grid;
+    height: 570px;
+    overflow: scroll;
+    grid-template-columns: repeat(auto-fit, 50%);
+    align-items: flex-start;
+    border-radius: 20px;
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+.items img{
+    width: 100px;
+    border-radius: 20px;
+}
+
+.text{
+    margin-left: 10px;
+}
+.details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.actions{
+    margin: 20px 10px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.actions i{
+    font-size: 1.2rem;
+    margin: 10px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

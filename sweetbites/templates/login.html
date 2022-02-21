@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static '/css/login.css' %}" />
+  </head>
+  <body>
+    <div class="header">
+      <a href=""></a>
+      <img class="logo" src="/static/images/logo.png" alt="Logo" />
+      <h4>Sweet Bites</h4>
+    </div>
+    <div class="main">
+      <div class="content">
+        <div class="title">Log in</div>
+        <div class="text">
+          <form action="{% url 'login_auth' %}" method="POST">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" name="username" />
+            <label for="Password">Password</label>
+            <input type="password" name="password" />
+            <input type="submit" class="button" />
+          </form>
+        </div>
+        <div class="third">
+          <a href="#">Forget Password?</a>
+          <a href="{% url 'signup' %}">Create Account</a>
+        </div>
+      </div>
+      <div class="image login-img"></div>
+    </div>
+    <div class="footer">
+      <p>© Sweet bites.All right reserved</p>
+    </div>
+  </body>
+</html>

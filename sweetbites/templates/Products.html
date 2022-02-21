@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static '/css/products.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <a href=""></a>
+      <img class="logo" src="/static/images/logo.png" alt="Logo" />
+      <h4>Sweet Bites</h4>
+      <nav>
+        <ul>
+          <li>My Account</li>
+          <li>My Cart</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="title">
+      <p>Cakes at Best Price</p>
+    </div>
+    <div class="container">
+      {% for item in items %}
+      <div class="product">
+        <img src="/static/images/white.jpg" alt="cake-image" />
+        <div class="text">
+          <h4>{{item.name}}</h4>
+          <p class="og-price">₹{{item.original_price}}</p>
+          <p>
+            <span class="dis-price">₹{{item.discount_price}}</span>
+            <span class="discount">13% off</span>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="product">
+        <img src="./images/chocolatecake-1.jpg" alt="" />
+        <div class="text">
+          <h4>White forest Cake</h4>
+          <p class="og-price">₹ 699</p>
+          <p>
+            <span class="dis-price">₹ 799</span>
+            <span class="discount">13% off</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© Sweet bites.All right reserved</p>
+    </div>
+  </body>
+</html>
