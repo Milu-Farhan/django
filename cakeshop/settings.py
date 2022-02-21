@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-m43@67k!!&k!tjp=m@j3v)pm=@u0=0mjmo8h_ewz1^w0md#$$h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'cakeshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cakeshop',
+        'USER':'root',
+        'PASSWORD':'Net#3782',
+        'HOST':'localhost',
+        'PORT':'3306'
     }
 }
 
@@ -116,14 +121,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
-
+STATIC_URL = '/collectstatic/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    os.path.join ( BASE_DIR, 'static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR,'collectstatic')
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = os.path.join(BASE_DIR,'images')
+MEDIA_URL = '/images/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

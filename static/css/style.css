@@ -50,7 +50,7 @@ nav ul li a {
   height: 45vh;
   display: flex;
   flex-direction: column;
-  background-image: url(/static/images/1.jpg);
+  background-image: url(/images/1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;

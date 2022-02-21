@@ -29,11 +29,11 @@ body {
 }
 
 .login-img {
-  background-image: url(/static/images/login.jpg);
+  background-image: url(/images/login.jpg);
 }
 
 .signup-img {
-  background-image: url(/static/images/signup.jpg);
+  background-image: url(/images/signup.jpg);
 }
 .image {
   background-repeat: no-repeat;
